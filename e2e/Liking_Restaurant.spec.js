@@ -53,3 +53,12 @@ Scenario('unliking one restaurant', async ({ I }) => {
   I.wait(5);
   I.see('No restaurant', '.restaurant-item__not__found');
 });
+
+Scenario('go to page about us', ({ I }) => {
+  I.seeElement('.nav__list');
+  I.wait(5);
+  I.see('ABOUT US', '.nav__item');
+  I.click(locate('.nav__item').last());
+  I.wait(5);
+  I.amOnPage('https://github.com/ywauran');
+});
